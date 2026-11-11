@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- All bill math lives in `src/lib/pricing.ts` (pure functions, tested in `pricing.test.ts`); UI never computes prices inline, so rule changes happen in one place.
+- Cart state is a React context (`src/lib/cart.tsx`) persisted to localStorage after hydration; no backend because checkout is demo-only.
+- Site sections are anchors on the single `/` route because the user asked for a single-page app.
